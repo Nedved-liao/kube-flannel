@@ -136,7 +136,7 @@ spec:
       volumes:
       - name: kubernetes-dashboard-certs
         hostPath:
-          path: /home/share/certs
+          path: /etc/kubernetes/pki
           type: Directory
       - name: tmp-volume
         emptyDir: {}
@@ -160,7 +160,7 @@ spec:
   ports:
     - port: 443
       targetPort: 8443
-      nodePort: 12582
+      nodePort: 31280
   selector:
     k8s-app: kubernetes-dashboard
   type: NodePort
